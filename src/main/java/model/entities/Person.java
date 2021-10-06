@@ -14,15 +14,24 @@ import java.util.List;
 public abstract class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //H2 database, case is postgresql is IDENTITY
     @Column
+    @GeneratedValue(strategy = GenerationType.AUTO) //H2 database, case is postgresql is IDENTITY
     private Long id;
 
     @Column
     private String name;
 
     @Column
+    private String dateOfBirth;
+
+    @Column
     @OneToMany(mappedBy = "personId")
     private List<Adress> adress;
 
+    @Column
+    @OneToMany(mappedBy = "personId")
+    private List<Documents> documents;
+
+    @Column
+    private String email;
 }

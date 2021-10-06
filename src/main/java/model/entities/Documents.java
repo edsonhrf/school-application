@@ -5,31 +5,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Adress {
+public class Documents {
 
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO) //AUTO for H2 database, case is postgresql is IDENTITY
+    @GeneratedValue(strategy = GenerationType.AUTO) //H2 database, case is postgresql is IDENTITY
     private Long id;
 
-    @Column
-    private String street;
-
-    @Column
-    private String postalCode;
-
-    @Column
-    private String neighborhood;
-
-    @Column
-    private String observations;
-
-    @Column
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Long personId;
