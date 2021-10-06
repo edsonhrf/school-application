@@ -32,7 +32,7 @@ public abstract class Person {
 
     @Column
     @Enumerated(EnumType.STRING)
-    private String sex;
+    private String gender;
 
     @Column
     @OneToMany(mappedBy = "personId")
