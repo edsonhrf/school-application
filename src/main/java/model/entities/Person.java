@@ -25,12 +25,18 @@ public abstract class Person {
     private String dateOfBirth;
 
     @Column
-    @OneToMany(mappedBy = "personId")
-    private List<Adress> adress;
+    private String cpf;
+
+    @Column
+    private String rg;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private String sex;
 
     @Column
     @OneToMany(mappedBy = "personId")
-    private List<Documents> documents;
+    private List<Adress> adress;
 
     @Column
     private String email;
